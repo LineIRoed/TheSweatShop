@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourCart</title>
+    <!-- links to css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/yourCart.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="navbar">
+            <a href="./index.html" class="navbar__logo">TheSweatShop</a>
+            <div class="navbar__list">
+                <ul class="navbar__links-list">
+                    <li class="navbar__links-item">
+                        <a href="./index.html" class="navbar__link">Shop</a>
+                    </li>
+                    <li class="navbar__links-item">
+                        <a href="#" class="navbar__link">About</a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="navbar__shopping-cart-parrent">
+                <a href="./YourCart.html" class="navbar__shopping-cart-txt navbar__link--active"><img src="./assets/svg/cart-shopping-svgrepo-com.svg" alt="shopping cart icon" class="navbar__shopping-cart">Your Cart</a>
+            </div>       
+        </div>        
+    </nav>
+    <main>
+        <!-- cart -->
+        <div class="cart__container">
+            <p class="cart__header">Your Cart</p> 
+            <div class="cart__content">
+                <div class="cart__box">
+                    <img src="./assets/images/baggy_jeans.webp" alt="baggy jeans" class="cart__img">
+                    <div class="detail__box">
+                        <div class="cart__product-title">Jessica`s Baggy Jeans</div>
+                        <div class="detail__box-row">
+                           <div class="cart__price">$30</div>
+                            <input type="number" value="1" class="cart__quantity"> 
+                        </div>
+                        
+                    </div>
+                    <!-- remove cart -->
+                    <div class="trash__box cart__remove"><img src="./assets/svg/trash-svgrepo-com.svg" alt="trash can" class="trash__box"></div>
+                </div>
+                <!-- total -->
+                <div class="total">
+                    <div class="total__title">Total</div>
+                    <div class="total__price">$0</div>
+                </div>
+                <!-- buy button -->
+                <button type="button" class="button__buy">Buy Now</button>
+            </div>   
+        </div>
+    </main>
+    <!-- link to js -->
+    <script src="./app.js"></script>
+    <!-- footer -->
+    <footer>
+        <div class="footer_links-container">
+            <ul class="links__container">
+                <li class="links__item">
+                    <p class="link__header">About Us</p>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Products</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Returns</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Sustainability</a>
+                </li>
+            </ul>
+            <ul class="links__container">
+                <li class="links__item">
+                    <p class="link__header">Your Profile</p>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Contact</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">My Orders</a>
+                </li>
+            </ul>
+            <div class="footer__socials">
+                <a href="#" class="socials__link"><img src="./assets/svg/facebook-svgrepo-com.svg" alt="Facebook logo" class="socials__img"></a>
+                <a href="#" class="socials__link"><img src="./assets/svg/instagram-167-svgrepo-com.svg" alt="Instagram logo" class="socials__img"></a>
+            </div>        
+        </div>
+    </footer>
+</body>
+</html>

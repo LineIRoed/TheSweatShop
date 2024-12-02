@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheSweatShop</title>
+    <!-- links to css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="navbar">
+            <a href="#" class="navbar__logo">TheSweatShop</a>
+            <div class="navbar__list">
+                <ul class="navbar__links-list">
+                    <li class="navbar__links-item">
+                        <a href="#" class="navbar__link navbar__link--active">Shop</a>
+                    </li>
+                    <li class="navbar__links-item">
+                        <a href="#" class="navbar__link">About</a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="navbar__shopping-cart-parrent">
+                <a href="./YourCart.html" class="navbar__shopping-cart-txt"><img src="./assets/svg/cart-shopping-svgrepo-com.svg" alt="shopping cart icon" class="navbar__shopping-cart">Your Cart</a>
+            </div>       
+        </div>        
+    </nav>
+    <main>
+        <!-- headers -->
+       <div class="main__header">
+            <p class="header">TheSweatShop</p>
+            <p class="sub__header">Where Clothes Come To Be</p>
+       </div>
+       <!-- products -->
+       <div class="container__cards">
+            <div class="cards__products">
+                
+                <article class="cards">
+                    <img src="./assets/images/baggy_jeans.webp" alt="Baggy Jeans" class="product__image">
+                    <h2 class="product__title">Jessica`s Baggy Jeans</h2>
+                    <div class="price__cart">
+                        <p class="product__price">$30</p>
+                        <button class="add_cart">Add To Cart</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+    <!-- link to js -->
+    <script src="./app.js"></script>
+    <!-- footer -->
+    <footer>
+        <div class="footer_links-container">
+            <ul class="links__container">
+                <li class="links__item">
+                    <p class="link__header">About Us</p>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Products</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Returns</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Sustainability</a>
+                </li>
+            </ul>
+            <ul class="links__container">
+                <li class="links__item">
+                    <p class="link__header">Your Profile</p>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">Contact</a>
+                </li>
+                <li class="links__item">
+                    <a href="#" class="links">My Orders</a>
+                </li>
+            </ul>
+            <!-- socials -->
+            <div class="footer__socials">
+                <a href="#" class="socials__link"><img src="./assets/svg/facebook-svgrepo-com.svg" alt="Facebook logo" class="socials__img"></a>
+                <a href="#" class="socials__link"><img src="./assets/svg/instagram-167-svgrepo-com.svg" alt="Instagram logo" class="socials__img"></a>
+            </div>        
+        </div>
+    </footer>
+</body>
+</html>

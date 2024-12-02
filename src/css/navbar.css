@@ -1,0 +1,75 @@
+@font-face {
+    font-family: baskerville;
+    src: url(../assets/fonts/Baskervville-Regular.ttf);
+}
+@font-face {
+    font-family: ChakraPetch;
+    src: url(../assets/fonts/ChakraPetch-Regular.ttf);
+}
+.navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: var(--primary-background-color);
+    font-family: baskerville;
+    align-items: center;
+}
+
+/* navbar logo styling */
+.navbar__logo {
+    display: flex;
+    justify-content: center;
+    font-family: ChakraPetch;
+    font-size: 1.563rem;
+    color: var(--primary-font-color);
+    font-weight: 300;
+}
+
+/* navbar links styling */
+.navbar__links-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+.navbar__link {
+    color: var(--primary-font-color);
+    font-family: baskerville;
+    font-size: 1rem;
+}
+.navbar__links-item > *:hover {
+    color: var(--font-color-hover);
+    border-bottom-color: var(--font-color-hover);
+    transition: border-bottom-color 0.3s linear, color 0.3s linear;
+}
+.navbar__link--active {
+    border-bottom: 1.5px solid var(--primary-font-color);
+}
+
+/* navbar shopping cart styling */
+.navbar__shopping-cart-parrent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-font-color);
+}
+.navbar__shopping-cart-parrent > *:hover {
+    color: var(--font-color-hover);
+    border-bottom-color: var(--font-color-hover);
+    transition: border-bottom-color 0.3s linear, color 0.3s linear;
+}
+.navbar__shopping-cart-txt {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-font-color);
+    font-family: baskerville;
+    font-size: 1rem;
+}
+.navbar__shopping-cart {
+    display: flex;
+    flex-direction: column;
+}

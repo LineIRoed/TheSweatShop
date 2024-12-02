@@ -1,0 +1,51 @@
+@font-face {
+    font-family: baskerville;
+    src: url(../assets/fonts/Baskervville-Regular.ttf);
+}
+@font-face {
+    font-family: ChakraPetch;
+    src: url(../assets/fonts/ChakraPetch-Regular.ttf);
+}
+
+/* styling footer */
+footer {
+    width: 100%;
+    height: 100%;
+    font-family: baskerville;
+    background-color: var(--primary-background-color);
+} 
+
+/* styling footer container */
+.footer_links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: top;
+    padding: 1rem;
+}
+.links__container {
+    display: flex;
+    flex-direction: column;
+}
+.link__header {
+    font-family: ChakraPetch;
+    font-size: 1.25rem;
+    color: var(--primary-font-color);
+    cursor: pointer;
+}
+.link__header:hover {
+    color: var(--font-color-hover);
+    transition: color 0.3s linear;
+}
+.links {
+    font-size: 1rem;
+    color: var(--primary-font-color);
+}
+.links:hover {
+    color: var(--font-color-hover);
+    transition: color 0.3s linear;
+}
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+}

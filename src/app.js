@@ -162,6 +162,7 @@ function addToCart(product) {
 function updateCartBadge() {
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
     shoppingCartBadge.textContent = totalItems; // Update the cart badge
+    shoppingCartBadge.style.display = 'none';  // Hide the cart badge
 }
 
 // Save the cart to localStorage for persistence (optional)

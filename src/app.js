@@ -40,7 +40,7 @@ const clothingItems = [
         imageUrl: "./assets/images/fringe_dress.webp"
     },
     {
-        id: 4,
+        id: 5,
         name: "Lacy`s Fur Coat",
         category: "Jackets",
         price: 40,
@@ -50,7 +50,7 @@ const clothingItems = [
         imageUrl: "./assets/images/fur_coat.webp"
     },
     {
-        id: 5,
+        id: 6,
         name: "Hannah`s Fur Sweather",
         category: "Tops",
         price: 30,
@@ -60,7 +60,7 @@ const clothingItems = [
         imageUrl: "./assets/images/fur_sweather.webp"
     },
     {
-        id: 6,
+        id: 7,
         name: "Leah`s Lace Up Corset",
         category: "Tops",
         price: 30,
@@ -70,7 +70,7 @@ const clothingItems = [
         imageUrl: "./assets/images/lace_up_corset.webp"
     },
     {
-        id: 7,
+        id: 8,
         name: "Mia`s Leather Coat",
         category: "Jackets",
         price: 60,
@@ -80,7 +80,7 @@ const clothingItems = [
         imageUrl: "./assets/images/leather_coat.webp"
     },
     {
-        id: 8,
+        id: 9,
         name: "Sonya`s Leather Jacket",
         category: "Jackets",
         price: 50,
@@ -94,9 +94,9 @@ const clothingItems = [
 //get Dom elements
 const shoppingCartBadge = document.querySelector(".cart-badge");
 //sort button
-const productsCardsContainers = document.querySelector (".cards");
+const productsCardsContainer = document.querySelector(".cards");
 
-window.addEventListener("DOMContentLoaded", renderProducts(products));
+window.addEventListener("DOMContentLoaded", () => renderProducts(clothingItems));
 
 //render products
 function renderProducts(products) {
@@ -109,11 +109,11 @@ function renderProducts(products) {
         const img = document.createElement("img");
         img.src = product.imageUrl;
         
-        const cardContent = content.createElement("div");
+        const cardContent = document.createElement("div");
         cardContent.classList.add("card__content");
 
         const title = document.createElement("h3");
-        title.textContent = product.title;
+        title.textContent = product.name;
 
         const description = document.createElement("p");
         description.textContent = product.description;

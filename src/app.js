@@ -91,6 +91,8 @@ const clothingItems = [
     },
 ]
 
+let cart = [];
+
 //get Dom elements
 const shoppingCartBadge = document.querySelector(".cart-badge");
 //sort button
@@ -102,7 +104,7 @@ window.addEventListener("DOMContentLoaded", () => renderProducts(clothingItems))
 function renderProducts(products) {
     productsCardsContainer.textContent = "";
     
-    clothingItems.forEach((product) => {
+    products.forEach((product) => {
         const card = document.createElement("article");
         card.classList.add("product-card");
         
@@ -126,6 +128,7 @@ function renderProducts(products) {
         addToCartButton.textContent = "Add To Cart";
 
         //event listeners for shopping cart here
+        addToCartButton.addEventListener("click", () => addToCart(product));
 
         //appending elements
         cardContent.append(title, price);
@@ -134,3 +137,47 @@ function renderProducts(products) {
 
     });
 }
+
+//adding products to the cart
+function addToCart(product) {
+    // Check if the product is already in the cart
+    const existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        // If the product is already in the cart, increment its quantity
+        existingProduct.quantity++;
+    } else {
+        // Otherwise, add the product with a quantity of 1
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    // Update the shopping cart badge
+    updateCartBadge();
+
+    // Optionally, save the cart to localStorage
+    saveCartToLocalStorage();
+}
+
+// Update the cart badge with the total number of items
+function updateCartBadge() {
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    shoppingCartBadge.textContent = totalItems; // Update the cart badge
+}
+
+// Save the cart to localStorage for persistence (optional)
+function saveCartToLocalStorage() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Load the cart from localStorage when the page loads (optional)
+function loadCartFromLocalStorage() {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartBadge(); // Update the cart badge with the saved cart data
+    }
+
+}
+
+// Call loadCartFromLocalStorage when the page loads to load the saved cart
+window.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);

@@ -104,10 +104,13 @@ function renderProducts(products) {
     
     clothingItems.forEach((product) => {
         const card = document.createElement("article");
-        card.classList.add("cards");
+        card.classList.add("product-card");
         
         const img = document.createElement("img");
         img.src = product.imageUrl;
+        img.alt = product.name;
+        img.style.width = "350px"; // Adjust the image size (you can change this to whatever you want)
+        img.style.height = "auto"; // Maintain aspect ratio
         
         const cardContent = document.createElement("div");
         cardContent.classList.add("card__content");
@@ -115,11 +118,8 @@ function renderProducts(products) {
         const title = document.createElement("h3");
         title.textContent = product.name;
 
-        const description = document.createElement("p");
-        description.textContent = product.description;
-
         const price = document.createElement("p");
-        price.textContent = `Pris: ${product.price}$`;
+        price.textContent = `${product.price}$`;
 
         const addToCartButton = document.createElement("button");
         addToCartButton.classList.add("add_cart");
@@ -128,7 +128,7 @@ function renderProducts(products) {
         //event listeners for shopping cart here
 
         //appending elements
-        cardContent.append(title, description, price);
+        cardContent.append(title, price);
         card.append(img, cardContent, addToCartButton);
         productsCardsContainer.append(card);
 

@@ -111,8 +111,8 @@ function renderProducts(products) {
         const img = document.createElement("img");
         img.src = product.imageUrl;
         img.alt = product.name;
-        img.style.width = "350px"; // Adjust the image size (you can change this to whatever you want)
-        img.style.height = "auto"; // Maintain aspect ratio
+        img.style.width = "350px"; 
+        img.style.height = "auto";
         
         const cardContent = document.createElement("div");
         cardContent.classList.add("card__content");
@@ -154,7 +154,7 @@ function addToCart(product) {
     // Update the shopping cart badge
     updateCartBadge();
 
-    // Optionally, save the cart to localStorage
+    // Save the cart to localStorage
     saveCartToLocalStorage();
 }
 
@@ -165,12 +165,12 @@ function updateCartBadge() {
     shoppingCartBadge.style.display = 'none';  // Hide the cart badge
 }
 
-// Save the cart to localStorage for persistence (optional)
+// Save the cart to localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Load the cart from localStorage when the page loads (optional)
+// Load the cart from localStorage when the page loads
 function loadCartFromLocalStorage() {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {

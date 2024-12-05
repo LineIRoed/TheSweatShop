@@ -110,7 +110,23 @@ function saveCartToLocalStorage() {
 // checkout message
 checkoutButton.addEventListener("click", () => {
     alert("Thank you for your purchase");
+    saveCartToLocalStorage();
+    renderCart();
+
+    //clearing cart after checkout
+    cart = [];
+
+    //removing cart from local storage, unsure if you want this to happen?
+    localStorage.removeItem("cart");
+
+    //re-renders the cart to empty
+    renderCart();
 });
+
+console.log(localStorage);
+
 
 // Render cart
 renderCart();
+
+

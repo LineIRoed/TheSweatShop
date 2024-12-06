@@ -30,7 +30,7 @@ main {
     color: var(--primary-font-color);
 }
 
-.cart-item {
+.cart__item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -39,24 +39,24 @@ main {
     border-color: var(--primary-font-color);
     border-width: 3px;
 }
-.cart-item img {
+.cart__item img {
     width: 200px;
     height: auto;
 }
-.cart-item-details {
+.cart__item-details {
     flex: 1;
     padding-left: 20px;
     font-family: baskerville;
     font-size: 1.125rem;
     color: var(--primary-font-color);
 }
-.cart-total {
+.cart__total {
     margin-top: 10px;
     font-family: ChakraPetch;
     font-size: 1.125rem;
     color: var(--primary-font-color);
 }
-.checkout-btn {
+.checkout__btn {
     margin-top: 20px;
     font-family: ChakraPetch;
     font-size: 1.25rem;
@@ -66,24 +66,24 @@ main {
     border: none;
     cursor: pointer;
 }
-.checkout-btn:hover {
+.checkout__btn:hover {
     background-color: var(--image-hover-color);
     transition: color 0.3s linear;
 }
-.cart-empty {
+.cart__empty {
     text-align: center;
     font-size: 18px;
     color: var(--primary-font-color);
     font-family: baskerville;
     padding: 1rem;
 }
-.cart-item-quantity{
+.cart__item-quantity{
     width: 2.5rem;
     background-color: var(--primary-background-color);
     border: none;
     color: var(--primary-font-color);
 }
-.remove-item-btn {
+.remove-item__btn {
     margin-top: 12rem;
     display: flex;
     font-family: ChakraPetch;
@@ -94,7 +94,7 @@ main {
     border: none;
     cursor: pointer;
 }
-.remove-item-btn:hover {
+.remove-item__btn:hover {
     background-color: var(--image-hover-color);
     transition: color 0.3s linear;
 }

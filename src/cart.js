@@ -1,83 +1,85 @@
-// Load the cart from localStorage
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+//Loading the cart from the local storage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// get DOM Elements
-const cartItemsContainer = document.getElementById('cart-items-container');
-const cartEmptyMessage = document.getElementById('cart-empty-message');
-const cartTotal = document.getElementById('cart-total');
-const checkoutButton = document.getElementById('checkout-btn');
+//Getting DOM elements
+const cartItemsContainer = document.getElementById("cart__items-container");
+const cartEmptyMessage = document.getElementById("cart__empty-message");
+const cartTotal = document.getElementById("cart__total");
+const checkoutBtn = document.getElementById("checkout__btn");
 
-// Display the cart items, render products
+//Showing cart items, Rendering products
 function renderCart() {
-    // Clearing the cart container
+    //clearing the cart container
     cartItemsContainer.innerHTML = "";
 
     if (cart.length === 0) {
         cartEmptyMessage.style.display = "block";
-        checkoutButton.style.display = "none";
-        // Updates total to 0
+        checkoutBtn.style.display = "none";
+        //updates total to 0
         cartTotal.textContent = "Total: $0.00";
     } else {
         cartEmptyMessage.style.display = "none";
-        checkoutButton.style.display = "block";
+        checkoutBtn.style.display = "block";
 
-        // Changes the total price for items added
+        //changes the total price for items added
         let totalPrice = 0;
 
-        //create elements for cart
+        //creating elements for the cart
         cart.forEach(item => {
             const itemDiv = document.createElement("div");
-            itemDiv.classList.add("cart-item");
+            itemDiv.classList.add("cart__item");
             
             const img = document.createElement("img");
             img.src = item.imageUrl;
             img.alt = item.name;
 
+            //code from here has been created with help from ChatGpt
             const itemDetails = document.createElement("div");
-            itemDetails.classList.add("cart-item-details");
+            itemDetails.classList.add("cart__item-details");
             itemDetails.innerHTML = `
                 <strong>${item.name}</strong>
                 <p>Price: $${item.price}</p>
                 <div>
                     <label for="quantity-${item.id}">Quantity: </label>
-                    <input type="number" id="quantity-${item.id}" value="${item.quantity}" min="1" data-id="${item.id}" class="cart-item-quantity" />
-                    <button class="remove-item-btn" data-id="${item.id}">Remove</button>
+                    <input type="number" id="quantity-${item.id}" value="${item.quantity}" min="1" data-id="${item.id}" class="cart__item-quantity" />
+                    <button class="remove-item__btn" data-id="${item.id}">Remove</button>
                 </div>
             `;
+        
+            // ChatGpt ends here
 
             const itemTotal = document.createElement("div");
-            itemTotal.classList.add("cart-item-total");
-            
+            itemTotal.classList.add("cart__item-total");
 
             itemDiv.append(img, itemDetails, itemTotal);
             cartItemsContainer.append(itemDiv);
 
-              // Updates the total price
-              totalPrice += item.price * item.quantity;
+                //updates the total price, also made with help from ChatGpt
+                totalPrice += item.price * item.quantity;
         });
 
-         // Show updated total price
-         cartTotal.textContent = `Total: $${totalPrice.toFixed(2)}`;
-    }
+        // Show updated total price, also made with help from ChatGpt
+        cartTotal.textContent = `Total: $${totalPrice.toFixed(2)}`;
+    };
 
-    // Event listener for update quantity and remove item
-    addCartListeners();
+    // Event listener for update quantity and remove items
+    addCartListener();
 }
 
-// Event listener for update quantity and remove item
-function addCartListeners() {
-    const quantityInputs = document.querySelectorAll('.cart-item-quantity');
+// Event listener for update quantity and remove items
+function addCartListener() {
+    const quantityInputs = document.querySelectorAll(".cart__item-quantity");
     quantityInputs.forEach(input => {
-        input.addEventListener('change', (e) => {
+        input.addEventListener("change", (e) => {
             const itemId = parseInt(e.target.dataset.id);
-            const newQuantity = parseInt(e.target.value);
+            const newQuantity = parseInt (e.target.value);
             updateItemQuantity(itemId, newQuantity);
         });
     });
 
-//remove item button
-    const removeButtons = document.querySelectorAll('.remove-item-btn');
-    removeButtons.forEach(button => {
+    // Remove items button
+    const removeBtn = document.querySelectorAll(".remove-item__btn");
+    removeBtn.forEach(button => {
         button.addEventListener("click", (e) => {
             const itemId = parseInt(e.target.dataset.id);
             removeItemFromCart(itemId);
@@ -102,31 +104,29 @@ function removeItemFromCart(itemId) {
     renderCart();
 }
 
-// Save the cart to localStorage
+// Saving the cart to local storage
 function saveCartToLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// checkout message
-checkoutButton.addEventListener("click", () => {
-    alert("Thank you for your purchase");
+// Checkout message
+checkoutBtn.addEventListener("click", () => {
+    alert("Thank You for your purchase");
     saveCartToLocalStorage();
     renderCart();
 
-    //clearing cart after checkout
+    //clearing the cart after checkout
     cart = [];
 
-    //removing cart from local storage, unsure if you want this to happen?
+    //removing the cart from local storage
     localStorage.removeItem("cart");
 
-    //re-renders the cart to empty
+    // Re-renders the cart to empty
     renderCart();
 });
 
 console.log(localStorage);
 
-
 // Render cart
 renderCart();
-
 

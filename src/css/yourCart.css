@@ -128,3 +128,9 @@ main {
         visibility: visible;
     }
 }
+
+@media screen and (max-width: 400px) {
+    .cart__header {
+        font-size: 1.875rem;
+    }
+}

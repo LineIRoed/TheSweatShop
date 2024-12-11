@@ -130,4 +130,16 @@ p {
     position: relative;
 }
 
+/* media queries */
+@media screen and (max-width: 400px) {
+    .sort-buttons {
+        font-size: 1rem;
+    }
+    .sort-button {
+        padding: 5px;
+        font-size: 0.875rem;
+    }
+    
+}
+
 

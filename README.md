@@ -53,7 +53,7 @@ If you have any questions or suggestions, feel free to reach out to me at [anro0
 
 Link to github repository: https://github.com/LineIRoed/TheSweatShop.git
 
-link to netlify deployment: https://6759b0c9fac84b000816d02f--incredible-kringle-df6baf.netlify.app/
+link to netlify deployment: https://6759c9b128ab59000861a91e--incredible-kringle-df6baf.netlify.app/
 
 
 

@@ -41,6 +41,32 @@ main {
     color: var(--primary-font-color);
 }
 
+/* Sort buttons */
+.sort-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 2rem;
+    color: var(--primary-font-color);
+    font-family: ChakraPetch;
+    font-size: 1.125rem;
+}
+
+.sort-button {
+    background-color: var(--primary-background-color);
+    color: var(--primary-font-color);
+    border: none;
+    padding: 7px;
+    font-family: baskerville;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.sort-button:hover {
+    background-color: var(--primary-font-color);
+    color: var(--image-hover-color);
+    transition: color 0.3s linear;
+}
+
 /* cards setup */
 .cards {
     display: flex;
@@ -87,7 +113,6 @@ p {
     padding: 7px;
     background-color: var(--primary-background-color);
     color: var(--primary-font-color);
-    background-color: var(--primary-background-color);
     border: none;
     font-family: baskerville;
     font-size: 1rem;
@@ -98,4 +123,20 @@ p {
     color: var(--image-hover-color);
     transition: color 0.3s linear;
 }
+
+#cart__icon-container {
+    position: relative;
+}
+
+/* #cart__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: none; /* Initially hidden 
+} */
+
 

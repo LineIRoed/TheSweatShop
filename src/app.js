@@ -7,7 +7,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["Light Wash", "Dark Wash", "Black"],
-        imageUrl: "./assets/images/baggy_jeans.webp"
+        imageUrl: "./assets/images/baggy_jeans.webp",
+        dateAdded: "2024-01-01"
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["Brown", "Blue", "White"],
-        imageUrl: "./assets/images/butterfly_dress.webp"
+        imageUrl: "./assets/images/butterfly_dress.webp",
+        dateAdded: "2024-01-02"
     },
     {
         id: 3,
@@ -27,7 +29,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["Brown", "Black", "Tan"],
-        imageUrl: "./assets/images/denim_coat.webp"
+        imageUrl: "./assets/images/denim_coat.webp",
+        dateAdded: "2024-01-03"
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["White", "Black", "Blue"],
-        imageUrl: "./assets/images/fringe_dress.webp"
+        imageUrl: "./assets/images/fringe_dress.webp",
+        dateAdded: "2024-01-04"
     },
     {
         id: 5,
@@ -47,7 +51,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["White", "Black", "Red"],
-        imageUrl: "./assets/images/fur_coat.webp"
+        imageUrl: "./assets/images/fur_coat.webp",
+        dateAdded: "2024-01-05"
     },
     {
         id: 6,
@@ -57,7 +62,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["White", "Black", "Brown"],
-        imageUrl: "./assets/images/fur_sweather.webp"
+        imageUrl: "./assets/images/fur_sweather.webp",
+        dateAdded: "2024-01-06"
     },
     {
         id: 7,
@@ -67,7 +73,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["White", "Black", "Grey"],
-        imageUrl: "./assets/images/lace_up_corset.webp"
+        imageUrl: "./assets/images/lace_up_corset.webp",
+        dateAdded: "2024-01-07"
     },
     {
         id: 8,
@@ -77,7 +84,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["White", "Black", "Grey"],
-        imageUrl: "./assets/images/leather_coat.webp"
+        imageUrl: "./assets/images/leather_coat.webp",
+        dateAdded: "2024-01-08"
     },
     {
         id: 9,
@@ -87,7 +95,8 @@ const clothingItems = [
         sizes:["S", "M", "L", "XL"],
         inStock: true,
         Colors: ["Brown", "Black", "Grey"],
-        imageUrl: "./assets/images/leather_jacket.webp"
+        imageUrl: "./assets/images/leather_jacket.webp",
+        dateAdded: "2024-01-09"
     },
 ]
 
@@ -95,7 +104,7 @@ let cart = [];
 
 //get Dom elements
 const shoppingCartBadge = document.querySelector(".cart-badge");
-//sort button
+const sortButtons = document.querySelectorAll(".sort-button");
 const productsCardsContainer = document.querySelector(".cards");
 
 window.addEventListener("DOMContentLoaded", () => renderProducts(clothingItems));
@@ -138,16 +147,37 @@ function renderProducts(products) {
     });
 }
 
+// Sort function
+const sortProducts = (event)=> {
+    let sortedProducts = [...clothingItems]
+
+    const sortType = event.target.dataset.sort;
+    if (sortType === "price-high"){
+        sortedProducts = sortedProducts.sort((a, b)=> b.price - a.price);
+    } else if (sortType === "price-low") {
+        sortedProducts = sortedProducts.sort((a, b)=> a.price - b.price);
+    } else if (sortType === "newest") {
+        sortedProducts = sortedProducts.sort((a, b)=> new Date(b.dateAdded) - new Date(a.dateAdded));
+    } else if (sortType === "all") {
+        sortedProducts = [...clothingItems];
+    }
+
+    renderProducts(sortedProducts);
+}
+sortButtons.forEach((button)=> {
+    button.addEventListener("click", (e)=> sortProducts(e))
+})
+
 //adding products to the cart
 function addToCart(product) {
     // Check if the product is already in the cart
     const existingProduct = cart.find(item => item.id === product.id);
 
     if (existingProduct) {
-        // If the product is already in the cart, increment its quantity
+        // If the product is already in the cart, change quantity
         existingProduct.quantity++;
     } else {
-        // Otherwise, add the product with a quantity of 1
+        // if not, add product
         cart.push({ ...product, quantity: 1 });
     }
 
@@ -161,8 +191,8 @@ function addToCart(product) {
 // Update the cart badge with the total number of items
 function updateCartBadge() {
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-    shoppingCartBadge.textContent = totalItems; // Update the cart badge
-    shoppingCartBadge.style.display = 'none';  // Hide the cart badge
+    shoppingCartBadge.textContent = totalItems;
+    //shoppingCartBadge.style.display = 'none';  
 }
 
 // Save the cart to localStorage
@@ -175,10 +205,10 @@ function loadCartFromLocalStorage() {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
         cart = JSON.parse(savedCart);
-        updateCartBadge(); // Update the cart badge with the saved cart data
+        updateCartBadge(); 
     }
 
 }
 
-// Call loadCartFromLocalStorage when the page loads to load the saved cart
+// loads the saved cart
 window.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);

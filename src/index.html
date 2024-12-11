@@ -28,6 +28,10 @@
             </div> 
             <div class="navbar__shopping-cart-parrent">
                 <a href="./YourCart.html" class="navbar__shopping-cart-txt"><img src="./assets/svg/cart-shopping-svgrepo-com.svg" alt="shopping cart icon" class="navbar__shopping-cart">Your Cart</a>
+                <!-- Cart badge -->
+                <div class="cart">
+                    <span class="cart-badge">0</span>
+                </div>
             </div>       
         </div>        
     </nav>
@@ -38,9 +42,15 @@
             <p class="sub__header">Where Clothes Come To Be</p>
        </div>
        <!-- products -->
-        <div class="cart">
-            <span class="cart-badge"></span> <!-- The cart badge will be updated here -->
+
+        <div class="sort-buttons">
+            Sort By:
+            <button class="sort-button" data-sort="all">All</button>
+            <button class="sort-button" data-sort="price-high">Price High</button>
+            <button class="sort-button" data-sort="price-low">Price Low</button>
+            <button class="sort-button" data-sort="newest">Newest</button>
         </div>
+        
         <div class="cards"></div>
                 
                  <!-- <article class="cards">

@@ -69,7 +69,28 @@
     font-family: baskerville;
     font-size: 1rem;
 }
+.cart-badge {
+    color: var(--primary-font-color);
+    font-family: ChakraPetch;
+    font-size: 1.125rem;
+    background-color: var(--secondary-bakground-color);
+    padding: 5px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 13%;
+    margin-top: 10px;
+}
 .navbar__shopping-cart {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+@media screen and (max-width: 636px) {
+    .navbar__links-list {
+        visibility: hidden;
+    }
+    
 }

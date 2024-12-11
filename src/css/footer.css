@@ -1,3 +1,4 @@
+/* fonts */
 @font-face {
     font-family: baskerville;
     src: url(../assets/fonts/Baskervville-Regular.ttf);
@@ -45,6 +46,7 @@ footer {
     color: var(--font-color-hover);
     transition: color 0.3s linear;
 }
+/* footer socials icons */
 .footer__socials {
     display: flex;
     gap: 1rem;

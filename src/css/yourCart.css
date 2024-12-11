@@ -19,7 +19,22 @@ main {
     justify-content: fle;
     padding: 3rem;
 }
-
+.back-button {
+    margin-top: 20px;
+    font-family: ChakraPetch;
+    font-size: 1.25rem;
+    color: var(--primary-font-color);
+    padding: 0.5rem;
+    background-color: var(--primary-background-color);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    visibility: hidden;
+}
+.back-button:hover {
+    background-color: var(--image-hover-color);
+    transition: color 0.3s linear;
+}
 .cart__header {
     font-family: ChakraPetch;
     font-size: 2.188rem;
@@ -99,4 +114,8 @@ main {
     transition: color 0.3s linear;
 }
 
-
+@media screen and (max-width: 636px) {
+    .back-button {
+        visibility: visible;
+    }
+}

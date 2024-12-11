@@ -1,3 +1,4 @@
+/* fonts */
 @font-face {
     font-family: baskerville;
     src: url(../assets/fonts/Baskervville-Regular.ttf);
@@ -109,6 +110,7 @@ p {
     font-family: baskerville;
     font-size: 1.125rem;
 }
+/* add cart buttons */
 .add_cart {
     padding: 7px;
     background-color: var(--primary-background-color);
@@ -127,16 +129,5 @@ p {
 #cart__icon-container {
     position: relative;
 }
-
-/* #cart__badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 14px;
-    display: none; /* Initially hidden 
-} */
 
 

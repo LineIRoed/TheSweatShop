@@ -1,3 +1,4 @@
+/* fonts */
 @font-face {
     font-family: baskerville;
     src: url(../assets/fonts/Baskervville-Regular.ttf);
@@ -69,6 +70,8 @@
     font-family: baskerville;
     font-size: 1rem;
 }
+
+/* styling the cart badge */
 .cart-badge {
     color: var(--primary-font-color);
     font-family: ChakraPetch;
@@ -88,9 +91,9 @@
     position: relative;
 }
 
+/* media queries */
 @media screen and (max-width: 636px) {
     .navbar__links-list {
         visibility: hidden;
-    }
-    
+    }   
 }

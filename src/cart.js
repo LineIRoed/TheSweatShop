@@ -33,7 +33,7 @@ function renderCart() {
             img.src = item.imageUrl;
             img.alt = item.name;
 
-            //code from here has been created with help from ChatGpt
+            //code from here has been created with help from ChatGpt, creates elements for cart
             const itemDetails = document.createElement("div");
             itemDetails.classList.add("cart__item-details");
             itemDetails.innerHTML = `

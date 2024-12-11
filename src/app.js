@@ -1,3 +1,4 @@
+//array clothing items
 const clothingItems = [
     {
         id: 1,
@@ -191,8 +192,7 @@ function addToCart(product) {
 // Update the cart badge with the total number of items
 function updateCartBadge() {
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-    shoppingCartBadge.textContent = totalItems;
-    //shoppingCartBadge.style.display = 'none';  
+    shoppingCartBadge.textContent = totalItems; 
 }
 
 // Save the cart to localStorage
